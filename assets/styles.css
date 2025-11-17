@@ -4,8 +4,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  background: #00ff55;
-  color: black;
+  background: #00ff44; /* green popup */
+  color: white;
   font-size: 2em;
   font-family: Arial, sans-serif;
   padding: 30px 50px;
@@ -25,32 +25,34 @@
   100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
 }
 
+/* Buttons */
 .neon-btn {
   background-color: #000;
-  color: #00ff55;
+  color: #00ff44;
   font-family: 'Arial', sans-serif;
   font-size: 16px;
   padding: 12px 24px;
   margin: 10px;
-  border: 2px solid #00ff55;
+  border: 2px solid #00ff44;
   border-radius: 12px;
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px #00ff55, 0 0 20px #00ff55, 0 0 30px #00ff55;
+  box-shadow: 0 0 10px #00ff44, 0 0 20px #00ff44, 0 0 30px #00ff44;
 }
 
 .neon-btn:hover {
-  box-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88, 0 0 45px #00ff55;
+  box-shadow: 0 0 15px #00ff44, 0 0 30px #00ff44, 0 0 45px #00ff44;
   transform: scale(1.05);
 }
 
+/* Body & header */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #121212;
-  color: #00ff55;
+  color: #00ff44;
   text-align: center;
 }
 
@@ -59,10 +61,11 @@ header {
   background-color: #1e1e1e;
   font-size: 32px;
   font-weight: bold;
-  color: #00ff55;
-  border-bottom: 4px solid #00ff55;
+  color: #00ff44;
+  border-bottom: 4px solid #00ff44;
 }
 
+/* Container & Game boxes */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -72,13 +75,13 @@ header {
 
 .game-box {
   background: #1f1f1f;
-  border: 2px solid #00ff55;
+  border: 2px solid #00ff44;
   border-radius: 12px;
   margin: 20px auto;
   padding: 20px;
   width: 90%;
   max-width: 800px;
-  box-shadow: 0 0 10px #00ff55;
+  box-shadow: 0 0 10px #00ff44;
   position: relative;
   text-align: center;
   display: block;
@@ -88,54 +91,9 @@ header {
   font-size: 20px;
   font-weight: bold;
   margin: 20px 0;
-  color: #00ff55;
 }
 
-button {
-  background-color: #000;
-  color: #00ff55;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 5px;
-  box-shadow: 0 0 10px #00ff55;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  user-select: none;
-}
-
-button:hover {
-  background-color: #002200;
-  animation: wobble 0.6s ease-in-out;
-  box-shadow: 0 0 25px #00ff88;
-  transform-origin: center;
-}
-
-@keyframes wobble {
-  0%, 100% { transform: rotate(0deg); }
-  15% { transform: rotate(-5deg); }
-  30% { transform: rotate(5deg); }
-  45% { transform: rotate(-5deg); }
-  60% { transform: rotate(5deg); }
-  75% { transform: rotate(-3deg); }
-  90% { transform: rotate(3deg); }
-}
-
-iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 8px;
-  margin-top: 15px;
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
+/* Fullscreen iframes */
 .fullscreen {
   position: fixed;
   top: 0;
@@ -157,8 +115,8 @@ iframe {
   top: 10px;
   right: 10px;
   z-index: 10000;
-  background: #002200;
-  color: #00ff55;
+  background: #00ff44;
+  color: black;
   padding: 8px 14px;
   border: none;
   border-radius: 8px;
@@ -166,81 +124,21 @@ iframe {
   cursor: pointer;
 }
 
-.spew-clock {
-  position: center;
-  top: 80px;
-  font-size: 1.5rem;
-  background-color: #111;
-  color: #00ff55;
-  padding: 8px 16px;
-  border-radius: 0px;
-  font-family: 'Courier New', Courier, monospace;
-  box-shadow: 0 0 12px #00ff55;
-  z-index: 1000;
-}
-
-/* Leaf animations, floating buttons, haunted borders, flicker, etc. all recolored similarly to green */
-
-.flicker-text {
-  color: #00ff55;
-  text-shadow: 0 0 10px #00ff88, 0 0 25px #00ff55;
-  font-family: 'Trebuchet MS', sans-serif;
-  font-size: 32px;
-  animation: flicker 2s infinite;
-}
-
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-  20%, 24%, 55% { opacity: 0.4; }
-}
-
-.bottom-left-img {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  width: 325px;
-  height: auto;
-  z-index: 100;
-}
-
-.leaf {
-  position: absolute;
-  top: -80px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 1;
-  will-change: transform, opacity;
-  user-select: none;
-  transform-origin: center center;
-}
-
-/* All buttons (.about-button, .games-button, .admin-button, etc.) updated to green border/glow */
-.about-button, .games-button, .gallery-button, .help-button, .contact-button, .enterRoomBtn, .steal-a-fluff-button, .admin-button, .halloween-btn {
-  border: 2px solid #00ff55;
-  color: #00ff55;
-  box-shadow: 0 0 10px #00ff55, 0 0 20px #00ff88 inset;
-}
-
-.about-button:hover, .games-button:hover, .gallery-button:hover, .help-button:hover, .contact-button:hover, .enterRoomBtn:hover, .steal-a-fluff-button:hover, .admin-button:hover, .halloween-btn:hover {
-  color: #00ff88;
-  box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff55 inset;
-}
-
-#custom-fluff-box, #badtimes, #v1, #retrocol, #granny, #bloodmoney, #hills, #level-devil-box, #drive-mad-box, #raftwars, #clash {
+/* Haunted rainbow borders */
+#custom-fluff-box, #badtimes, #v1, #retrocol, #granny,
+#bloodmoney, #hills, #level-devil-box, #drive-mad-box,
+#raftwars, #clash {
+  position: relative;
+  padding: 20px;
   border: 6px solid;
-  border-image-slice: 1;
-  border-width: 6px;
   border-radius: 12px;
-  background-color: #1f1f1f;
-  color: #00ff55;
   animation: haunted-border 8s ease-in-out infinite;
+  background-color: #1f1f1f;
+  color: white;
 }
 
 @keyframes haunted-border {
-  0% { border-image: linear-gradient(120deg, #00ff55, #111, #00ff88, #111) 1; box-shadow: 0 0 8px #00ff55, 0 0 16px #00ff55 inset; }
-  20% { border-image: linear-gradient(200deg, #00ff88, #111, #00ff55, #222) 1; box-shadow: 0 0 10px #00ff88, 0 0 18px #00ff88 inset; }
-  40% { border-image: linear-gradient(280deg, #111, #00ff55, #00ff88, #111) 1; box-shadow: 0 0 14px #00ff55, 0 0 20px #00ff55 inset; }
-  60% { border-image: linear-gradient(320deg, #00ff88, #111, #00ff55, #222) 1; box-shadow: 0 0 12px #00ff88, 0 0 22px #00ff88 inset; }
-  80% { border-image: linear-gradient(400deg, #00ff55, #00ff88, #111, #00ff55) 1; box-shadow: 0 0 16px #00ff55, 0 0 24px #00ff88 inset; }
-  100% { border-image: linear-gradient(480deg, #00ff55, #222, #00ff88, #111) 1; box-shadow: 0 0 8px #00ff55, 0 0 16px #00ff55 inset; }
+  0% { border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1; }
+  50% { border-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red) 1; }
+  100% { border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1; }
 }
